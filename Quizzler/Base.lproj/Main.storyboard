@@ -43,6 +43,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="True">
                                             <backgroundConfiguration key="background" image="Rectangle"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C8i-Uo-QSk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4m-XU-gwZ">
                                         <rect key="frame" x="0.0" y="660.33333333333337" width="353" height="80"/>
@@ -55,6 +58,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="False">
                                             <backgroundConfiguration key="background" image="Rectangle"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf1-EP-KDS"/>
+                                        </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JIH-ej-gPf">
                                         <rect key="frame" x="0.0" y="757.33333333333337" width="353" height="2.6666666666666288"/>
@@ -78,6 +84,12 @@
                             <constraint firstItem="d10-9t-3YZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xip-hT-DjH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="falseButton" destination="a4m-XU-gwZ" id="ZlV-kw-Cu5"/>
+                        <outlet property="progressBar" destination="JIH-ej-gPf" id="q7W-PY-nin"/>
+                        <outlet property="questionLabel" destination="aY2-OB-iJv" id="rBo-LG-kuz"/>
+                        <outlet property="trueButton" destination="iHe-yN-qyP" id="7fX-fc-rU1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
