@@ -57,6 +57,8 @@ class ViewController: UIViewController {
                     buttonTwo.setTitle(":(", for: .normal)
                     buttonThree.setTitle(":(", for: .normal)
                 }
+                scoreLabel.text = String(quizBrain.trueAnswer)
+                quizBrain.trueAnswer = 0
             }
         }
         

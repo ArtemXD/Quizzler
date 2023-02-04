@@ -48,7 +48,6 @@ struct QuizBrain {
     mutating func qNumCheck() -> Bool {
         if(qNum == quiz.count - 1) {
             qNum = -1
-            trueAnswer = 0
             return true
         } else {
             qNum += 1
