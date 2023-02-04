@@ -34,26 +34,47 @@
                                         <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY2-OB-iJv">
-                                        <rect key="frame" x="0.0" y="46.999999999999972" width="353" height="499.33333333333326"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY2-OB-iJv">
+                                        <rect key="frame" x="0.0" y="47" width="353" height="402.33333333333331"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHe-yN-qyP">
-                                        <rect key="frame" x="0.0" y="563.33333333333337" width="353" height="80"/>
+                                        <rect key="frame" x="0.0" y="466.33333333333337" width="353" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="4zo-Li-iic"/>
                                         </constraints>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="True"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="True">
+                                        <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background" image="Rectangle"/>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="3"/>
+                                            </attributedString>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C8i-Uo-QSk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PT-ef-Bc2">
+                                        <rect key="frame" x="0.0" y="563.33333333333337" width="353" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="0cc-bR-3mT"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="True"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="Rectangle"/>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="2"/>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="loZ-p3-WHO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4m-XU-gwZ">
@@ -64,7 +85,7 @@
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="True"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="False">
+                                        <buttonConfiguration key="configuration" style="plain" title="1">
                                             <backgroundConfiguration key="background" image="Rectangle"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -94,11 +115,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="falseButton" destination="a4m-XU-gwZ" id="ZlV-kw-Cu5"/>
+                        <outlet property="buttonOne" destination="a4m-XU-gwZ" id="ZlV-kw-Cu5"/>
+                        <outlet property="buttonThree" destination="iHe-yN-qyP" id="9xG-2w-GTx"/>
+                        <outlet property="buttonTwo" destination="9PT-ef-Bc2" id="41Q-9S-YWF"/>
                         <outlet property="progressBar" destination="JIH-ej-gPf" id="q7W-PY-nin"/>
                         <outlet property="questionLabel" destination="aY2-OB-iJv" id="rBo-LG-kuz"/>
                         <outlet property="scoreLabel" destination="yLa-MI-8Nb" id="o4d-A0-bKM"/>
-                        <outlet property="trueButton" destination="iHe-yN-qyP" id="7fX-fc-rU1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

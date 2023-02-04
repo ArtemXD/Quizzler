@@ -13,39 +13,58 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     
-    @IBOutlet weak var trueButton: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
     
     @IBOutlet weak var progressBar: UIProgressView!
     
-    @IBOutlet weak var falseButton: UIButton!
+    @IBOutlet weak var buttonOne: UIButton!
+    
+    @IBOutlet weak var buttonThree: UIButton!
     
     var quizBrain = QuizBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = quizBrain.quiz[0].questionText
-        trueButton.layer.cornerRadius = 27
-        falseButton.layer.cornerRadius = 27
+        setFirstQuestion()
+        buttonTwo.layer.cornerRadius = 27
+        buttonOne.layer.cornerRadius = 27
+        buttonThree.layer.cornerRadius = 27
     }
     
     
     
     @IBAction func clickButton(_ sender: UIButton) {
         if quizBrain.checkLastQuestion() {
-            return
+            setFirstQuestion()
+        } else {
+            checkAnswer2(sender)
+            if !quizBrain.qNumCheck() {
+                questionLabel.text = quizBrain.quizText()
+                let varAnswer = quizBrain.answerText()
+                buttonOne.setTitle(varAnswer[0], for: .normal)
+                buttonTwo.setTitle(varAnswer[1], for: .normal)
+                buttonThree.setTitle(varAnswer[2], for: .normal)
+                scoreLabel.text = String(quizBrain.trueAnswer)
+            } else {
+                if quizBrain.trueAnswer > 5 {
+                    questionLabel.text = "Good"
+                    buttonOne.setTitle(":)", for: .normal)
+                    buttonTwo.setTitle(":)", for: .normal)
+                    buttonThree.setTitle(":)", for: .normal)
+                } else {
+                    questionLabel.text = "Bad"
+                    buttonOne.setTitle(":(", for: .normal)
+                    buttonTwo.setTitle(":(", for: .normal)
+                    buttonThree.setTitle(":(", for: .normal)
+                }
+            }
         }
-        checkAnswer2(sender)
-        if !quizBrain.qNumCheck() {
-            questionLabel.text = quizBrain.quizText()
-            scoreLabel.text = String(quizBrain.trueAnswer)
-        }
+        
     }
     
     
     func checkAnswer2(_ sender: UIButton) {
-
         let answer = quizBrain.checkAnswer(sender.titleLabel?.text ?? "")
-        
         if answer {
             sender.backgroundColor = .green
         } else {
@@ -56,8 +75,18 @@ class ViewController: UIViewController {
     }
     
     @objc func clearButtonBack() {
-        trueButton.backgroundColor = .clear
-        falseButton.backgroundColor = .clear
+        buttonTwo.backgroundColor = .clear
+        buttonOne.backgroundColor = .clear
+        buttonThree.backgroundColor = .clear
+    }
+    
+    func setFirstQuestion(){
+        questionLabel.text = quizBrain.quizText()
+        let varAnswer = quizBrain.answerText()
+        buttonOne.setTitle(varAnswer[0], for: .normal)
+        buttonTwo.setTitle(varAnswer[1], for: .normal)
+        buttonThree.setTitle(varAnswer[2], for: .normal)
+        scoreLabel.text = String(quizBrain.trueAnswer)
     }
 
 }
